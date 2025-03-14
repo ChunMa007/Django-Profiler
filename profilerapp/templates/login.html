@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="container d-flex justify-content-center" style="margin-top: 150px">
+        <div class="card p-3 shadow-lg" style="max-width: 400px; width: 100%">
+            <h1 class="text-center mb-3">Login</h1>
+            <form action="{% url "user_login" %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="username" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="password" required>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+                <div>
+                    <p>Don't have an account? <a href="{% url "user_register" %}" style="text-decoration: None">Signup</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+{% comment %} <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
+        <h1 class="text-center">Login</h1>
+        <form action="">
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+            <p>Don't have an account? <a href="" style="text-decoration: None">Signup</a></p>
+        </form>
+    </div>
+</div> {% endcomment %}
+{% endblock %}

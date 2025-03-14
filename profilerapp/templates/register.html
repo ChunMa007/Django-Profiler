@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mt-5 mb-5 text-center">Register</h1>
+    <div class="d-flex justify-content-center">
+        <form action="" method="POST">
+            {% csrf_token %}
+    
+            {{ form.as_p }}
+    
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+{% endblock  %}
