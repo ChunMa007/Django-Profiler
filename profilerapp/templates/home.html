@@ -1,5 +1,60 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome to my Homepage</h1>
+    <form action="{% url 'search' %}" method="GET">
+        <div class="input-group mt-5 mb-1">
+            <a href="{% url 'create_profile' %}" class="btn btn-primary col-9 me-1">Create Profile</a>
+            <input type="text" class="form-control col-2" placeholder="Search" name="search">
+            <button type="submit" class="btn btn-success col-1">Search</button>
+        </div>
+    </form>
+
+    <table class="table table-stripped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th class="col">ID</th>
+                <th class="col">Username</th>
+                <th class="col">Name</th>
+                <th class="col">Email</th>
+                <th class="col">Gender</th>
+                <th class="col">Profile</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if records %}
+                {% for record in records %}
+                    <tr class="align-middle">
+                        <td>{{ record.id }}</td>
+                        <td>{{ record.username }}</td>
+                        <td>{{ record.first_name }} {{ record.last_name }}</td>
+                        <td>{{ record.email }}</td>
+                        <td class="text-center">{{ record.gender }}</td>
+                        <td class="text-center">
+                            <img src="{{ record.image.url }}" alt="{{ record.username }}" class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-center">
+        <ul class="pagination">
+            <li class="page-item {% if records.number == 1 %}disabled{% endif %}">
+                <a class="page-link" href="?search={{ request.GET.search }}&page=1">First</a>
+            </li>
+            <li class="page-item {% if records.has_previous %}{% else %}disabled{% endif %}">
+                <a class="page-link" href="{% if records.has_previous %}?search={{ request.GET.search }}&page={{ records.previous_page_number }}{% else %}#{% endif %}">Previous</a>
+            </li>
+
+            <li class="page-item active"><span class="page-link">{{ records.number }}</span></li>
+
+            <li class="page-item {% if records.has_next %}{% else %}disabled{% endif %}">
+                <a class="page-link" href="{% if records.has_next %}?search={{ request.GET.search }}&page={{ records.next_page_number }}{% else %}#{% endif %}">Next</a>
+            </li>
+            <li class="page-item {% if records.number == records.paginator.num_pages %}disabled{% endif %}">
+                <a class="page-link" href="?search={{ request.GET.search }}&page={{ records.paginator.num_pages }}">Last</a>
+            </li>
+        </ul>
+    </div>
 {% endblock  %}

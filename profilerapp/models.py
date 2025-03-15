@@ -1,6 +1,6 @@
 from django.db import models
 
-class User_Records(models.Model):
+class User_Record(models.Model):
     GENDER_CHOICES = [
         ('M', 'Male'),
         ('F', 'Female')
@@ -12,6 +12,7 @@ class User_Records(models.Model):
     last_name = models.CharField(max_length=200)
     email = models.EmailField(max_length=200, unique=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    image = models.ImageField(upload_to="profile_pics/", blank=True, null=True, default="profile_pics/default.jpg")
     
     def __str__(self):
-        return f"{self.first_name} {self.last_name} {self.get_gender_display()}"
+        return f"{self.first_name} {self.last_name}"

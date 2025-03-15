@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mt-4 mb-5 text-center">Create Profile</h1>
+    <div class="d-flex justify-content-center">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+    
+            {{ form.as_p }}
+    
+            <button type="submit" class="btn btn-success">Create Profile</button>
+        </form>
+    </div>
+{% endblock  %}
