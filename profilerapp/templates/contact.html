@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead text-muted">We’d love to hear from you! Reach out for inquiries or feedback.</p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <div class="card shadow border-0 p-4">
+                <h4 class="fw-semibold text-center">Get in Touch</h4>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h4 class="fw-semibold">Our Contact Details</h4>
+                <p>Feel free to reach us through any of the following:</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-envelope-fill text-primary"></i> Email: bete.fhelalexandre@gmail.com</li>
+                    <li class="list-group-item"><i class="bi bi-telephone-fill text-success"></i> Phone: +63 950 0550 472</li>
+                    <li class="list-group-item"><i class="bi bi-geo-alt-fill text-danger"></i> Address: Cainta, Rizal</li>
+                </ul>
+                <div class="mt-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="bi bi-facebook"></i> Facebook</a>
+                    <a href="#" class="btn btn-outline-info btn-sm me-2"><i class="bi bi-twitter"></i> Twitter</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-github"></i> Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

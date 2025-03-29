@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h1 class="display-4 fw-bold">About Us</h1>
+            <p class="lead text-muted">Welcome to <strong>Profiler</strong>, a user-friendly profile management system.</p>
+        </div>
+    </div>
+
+    <div class="row mt-4 d-flex justify-content-center">
+        <div class="col-md-6 d-flex align-items-center">
+            <div>
+                <h3 class="fw-semibold">Our Mission</h3>
+                <p>Our goal is to provide a <strong>secure, scalable, and intuitive</strong> platform for managing user records efficiently.</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Secure User Authentication</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Advanced Profile Management</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Image Upload & Handling</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill text-success"></i> Search & Pagination Features</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 text-center">
+        <h3 class="fw-semibold mb-4">Why Choose Profiler?</h3>
+        <div class="col-md-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <i class="bi bi-person-check text-primary display-5"></i>
+                    <h5 class="card-title mt-2">User-Friendly</h5>
+                    <p class="card-text">Intuitive UI for seamless navigation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <i class="bi bi-speedometer2 text-danger display-5"></i>
+                    <h5 class="card-title mt-2">Performance Optimized</h5>
+                    <p class="card-text">Pagination ensures fast data retrieval.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <i class="bi bi-shield-lock text-success display-5"></i>
+                    <h5 class="card-title mt-2">Secure & Reliable</h5>
+                    <p class="card-text">Django security keeps user data safe.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <i class="bi bi-tools text-warning display-5"></i>
+                    <h5 class="card-title mt-2">Customizable</h5>
+                    <p class="card-text">Flexible and adaptable to your needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col text-center">
+            <h3 class="fw-semibold">Get Involved!</h3>
+            <p>Profiler is an <strong>open-source</strong> project. Contribute on <a href="#" class="text-primary">GitHub</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

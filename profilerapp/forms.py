@@ -25,7 +25,7 @@ class SignUpUser(UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm Password'
         self.fields['password2'].label = ''
         self.fields['password2'].help_text = '<span class="form-text text-muted"><small>Enter the same password as before, for verification.</small></span>'
-
+    
 class CreateProfile(forms.ModelForm):
     username = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "Username", "class": "form-control"}), label="")
     first_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder": "First Name", "class": "form-control"}), label="")
